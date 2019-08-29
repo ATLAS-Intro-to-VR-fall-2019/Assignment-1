@@ -19,11 +19,15 @@ Click on your project in Unity Hub to open it. If you have never used Unity befo
 
 [The Unity Manual](https://docs.unity3d.com/Manual/index.html) is also a pretty detailed resource.
 
-### Let's Add Something to the Scene
-Look at the sample scene in inspector
-Game objects
-Creating One
-Adding a script to it
+### Examining the Sample Scene
+When you create and open a new project, it should automatically open a sample scene. A **Scene** is essentially a user defined setup for a specific part of the application. For these first few assignments we will be using only one scene, but let's rename *SampleScene* to *Main* by right clicking it in the project area at the bottom of the window and selecting rename. We are calling it *Main* because it's the main part (the only one in this case) of our application.
+
+If you look to the left of the screen, you should see the **Heirarchy** window. There you should see two objects: Main Camera, and Directional Light. Unity refers to these objects as **GameObjects** and they can do a lot. If you click on `Main Camera` you should see a camera view cone appear in the *Scene* window in the middle of the screen, and the inspector on the right side of the screen, the **Inspector**, will change to show what *components* are attached to it. **Components** are what contain all of the functionality in Unity, each GameObject will always have a *Transform* component, which is used to set and display the position, rotation, and scale of a GameObject. You may also notice other components attached to the Main Camera, these tell the game engine that this GameObject is a camera.
+
+### Let's Add Our Own Object
+Right click in the Heirarchy and select `3D Object -> Sphere`, you should see a sphere appear in the middle of the Scene view and in the Heirarchy a new GameObject called `Sphere`. Let's rename Sphere to `Ball`. You can edit the transform of the ball by either moving it manually in the scene editor or changing the `transform` values in the Inspector. If you move it by had, pay attention to the `transform` component and see the values change.
+
+Finally, let's create our own component. Select the Ball in the Heirarchy and in the Inspector and click the `Add Component` button at the bottom. Select the new script option, and add a script named `BallPrefab`. If you select this script in the Project window, it will open the IDE that Unity comes with and show you a generated file template. For now we won't be editing this, and I will cover the default script in class next week. We will be using this script as a reference in a later part of the assignment. First let's try and get it running on your phones.
 
 ## Deploying
 Now that you have an scene to deploy, let's get you set up to run it on your phone. First close Unity since we will be adding new libraries. Follow the setup guide for the type of phone you have. You can add moduals to your Unity installation by going to the **Installs** tab in Unity Hub, and clicking on the 3 dots on the version you are using, then selecting **Add Modules**.
@@ -49,7 +53,7 @@ if(Input.GetMouseButtonDown(0)) {
   );
 }
 ```
-This will generate a ball when you touch the screen and add a random forward force. Before this will work though, we will have to connect the *BallPrefab* to the *BallShooter* script. To do this, click on the `MainCamera` in our scene and drag the BallPrefab object from the bottom of the window on to the Ball property of the `BallShooter` script. Now if you run it, you should see some plain white balls shoot out of the screen when you click. The last step is to build it on your phone see it in action!
+This will generate a ball when you touch the screen and add a random forward force. Before this will work though, we will have to connect the *BallPrefab* to the *BallShooter* script. To do this, click on the `MainCamera` in our scene and drag the BallPrefab object from the bottom of the window on to the Ball property of the *BallShooter* script. Now if you run it, you should see some plain white balls shoot out of the screen when you click. The last step is to build it on your phone see it in action!
 
 ## Grading
 To get full credit for this assigment, either show me in person the app running on your phone, or record a video, then upload the project in a zip file to canvas. That's it!
